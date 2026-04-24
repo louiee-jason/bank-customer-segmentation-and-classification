@@ -1,56 +1,48 @@
-# Bank Customer Segmentation and Classification
-
-End-to-end banking analytics project for customer segmentation and classification using clustering-based labeling and machine learning models.
+# Bank Customer Segmentation & Classification
 
 ## Overview
-This project demonstrates a complete machine learning workflow that transforms unlabeled banking transaction data into meaningful insights and predictive models.
-The pipeline combines unsupervised learning (clustering) and supervised learning (classification) to analyze customer behavior.
+This project presents an end-to-end machine learning pipeline to segment banking customers and predict their behavioral profiles. By combining unsupervised learning (clustering) and supervised learning (classification), the project transforms unlabeled transactional data into actionable business insights.
 
 ## Problem Statement
-Banking systems generate large volumes of transaction data, but labeled data is often unavailable.
+Banks often lack labeled data to understand customer behavior, making it difficult to perform targeted marketing, risk profiling, and retention strategies.
 
-This project addresses that challenge by:
+This project addresses the problem by:
 - Identifying customer segments using clustering
 - Generating labels from cluster results
-- Training classification models to predict customer behavior
+- Training classification models to predict customer segments
 
-## Pipeline
+## Methodology
+
 ### 1. Data Preprocessing
-- Data cleaning (handling missing values and duplicates)
-- Feature encoding (Label Encoding and One-Hot Encoding)
-- Outlier handling using IQR
-- Feature scaling using StandardScaler
-- Feature engineering through binning
+- Handled missing values and duplicates
+- Applied feature encoding (Label Encoding, One-Hot Encoding)
+- Performed outlier treatment using IQR
+- Scaled features using StandardScaler
+- Conducted feature engineering through binning
 
 ### 2. Customer Segmentation
 - Algorithm: K-Means Clustering
-- Optimal cluster selection using Elbow Method and Silhouette Score
-- Dimensionality reduction using PCA
-- Cluster interpretation based on customer behavior
+- Optimal clusters determined using Elbow Method and Silhouette Score
+- PCA used for dimensionality reduction and visualization
 
-### 3. Label Generation
-- Cluster results are converted into target labels
-- Dataset prepared for supervised learning
+### 3. Cluster Insights
+- Segment 0: High-income customers with frequent transactions (high-value segment)
+- Segment 1: Low activity customers with minimal transactions (low engagement)
+- Segment 2: Moderate income with high credit usage (potential risk segment)
 
 ### 4. Classification Modeling
-- Decision Tree Classifier
-- Random Forest Classifier
-- Model evaluation using:
-  - Accuracy
-  - Precision
-  - Recall
-  - F1-score
-
-### 5. Hyperparameter Tuning
-- GridSearchCV applied to Random Forest
-- Performance optimization
+- Models: Decision Tree, Random Forest
+- Evaluation metrics: Accuracy, Precision, Recall, F1-score
+- Hyperparameter tuning using GridSearchCV
 
 ## Results
-The project shows that clustering-based labels can be effectively used to train classification models for predicting customer segments.
+- Random Forest achieved strong performance in predicting customer segments
+- Clustering-based labeling proved effective for training supervised models
+
+## Business Impact
+- Enables targeted marketing for high-value customers
+- Helps identify risky customer segments with high credit usage
+- Supports retention strategies for low-engagement users
 
 ## Tech Stack
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Matplotlib, Seaborn
-- Joblib
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
